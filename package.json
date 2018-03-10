@@ -1,0 +1,15 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dalton Montee",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-router": "^4.2.0"
+  }
+}
