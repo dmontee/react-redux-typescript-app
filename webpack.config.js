@@ -4,12 +4,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: {
-		bundle: './src/index.js'
+		bundle: './src/index.js',
+		vendor: [
+			"react",
+			"react-dom",
+			"react-redux",
+			"react-router",
+			"react-router-dom",
+			"redux",
+			"redux-thunk",
+		]
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
 		publicPath: '/',
-		filename: '[name].[chunkhash].js'
+		filename: '[name].[hash].js'
 	},
 	module: {
 		loaders: [{
@@ -30,7 +39,8 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
-			minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
+			filename: 'vendor.js',
+			minChunks: Infinity
 		}),
 		new HtmlWebpackPlugin({
 			template: 'index.html'
