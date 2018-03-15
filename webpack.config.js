@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const postcssOptions = require('./postcss.config');
 
 module.exports = {
 	entry: {
@@ -21,17 +23,33 @@ module.exports = {
 		filename: '[name].[hash].js'
 	},
 	module: {
-		loaders: [{
-			test: /\.(html)$/,
-			use: {
-				loader: 'html-loader',
-				options: {}
+		loaders: [
+			{
+				test: /\.(html)$/,
+				use: {
+					loader: 'html-loader',
+					options: {}
+				}
+			},
+			{
+				test: /.(js|jsx)$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
+			},
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+				    fallback: 'style-loader',
+				    use: [
+				           'css-loader',
+				           {
+				           		loader: 'postcss-loader',
+				                options: postcssOptions
+				           }
+				    ]
+				})
 			}
-		}, {
-			test: /.(js|jsx)$/,
-			exclude: /node_modules/,
-			loader: 'babel-loader'
-		}]
+		]
 	},
 	resolve: {
 		extensions: ['.js', '.jsx']
@@ -44,6 +62,9 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: 'index.html'
-		})
+		}),
+		new ExtractTextPlugin({
+            filename: '[name].[hash].css'
+        })
 	]
 };
