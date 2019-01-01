@@ -1,0 +1,17 @@
+{
+    "extends": ["tslint-react"],
+    "exclude": ["node_modules"],
+    "rules": {
+        "eofline": true,
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
+        "quotemark": [
+            true,
+            "double",
+            "avoid-escape"
+        ]
+    }
+}
