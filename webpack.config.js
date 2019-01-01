@@ -7,8 +7,8 @@ const postcssOptions = require('./postcss.config');
 
 module.exports = {
 	entry: {
-		bundle: "./src/index.js",
-		vendor: [
+		bundle: "./src/index.tsx",
+		vendors: [
 			"@babel/polyfill",
 		]
 	},
@@ -16,6 +16,17 @@ module.exports = {
 		path: path.join(__dirname, "dist"),
 		publicPath: "/",
 		filename: '[name].[hash].js'
+	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendors: {
+					test: /[\\/]node_modules[\\/]/,
+					name: "vendors",
+					chunks: "all"
+		  		}
+			}
+	  	}
 	},
 	module: {
 		rules: [
@@ -37,8 +48,8 @@ module.exports = {
 					"style-loader",
 					"css-loader",
 					{
-							loader: "postcss-loader",
-						 options: postcssOptions
+						loader: "postcss-loader",
+						options: postcssOptions
 					}
 			 	]
 			}
@@ -49,6 +60,8 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.NamedModulesPlugin(),
-		new HtmlWebpackPlugin()
+		new HtmlWebpackPlugin({
+			template: "./index.html"
+		})
 	]
 };

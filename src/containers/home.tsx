@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
-class Home extends Component {
+class Home extends React.Component<{}, {}> {
 	render() {
 		return (
 			<div>
