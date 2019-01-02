@@ -6,8 +6,8 @@ const devConfig = {
     mode: "development",
     devtool: "inline-source-map",
     devServer: {
-      contentBase: "./dist",
-      hot: true
+        contentBase: "./dist",
+        hot: true
     }
 }
 
