@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import reducers from "./reducers";
+import reducers from "./store";
 import App from "./App";
 
 import "../styles/vendors.css";

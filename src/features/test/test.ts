@@ -1,4 +1,4 @@
-import { TEST, TestAction } from "../actions";
+import { TEST, TestAction } from ".";
 
 const test = (state="", action: TestAction) => {
     switch(action.type){
