@@ -1,2 +1,11 @@
 # react-typescript-app
-Boilerplate app with react and typescript
+Boilerplate app that uses react, redux, typescript, and postcss.
+
+Getting started run:
+> npm i
+
+Development build:
+> npm run build:dev
+
+Production build:
+> npm run build:prod
