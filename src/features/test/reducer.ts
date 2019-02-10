@@ -1,8 +1,8 @@
-import { TEST, TestAction } from ".";
+import { TestAction, TestActionTypes } from "./types";
 
 const test = (state="", action: TestAction) => {
     switch(action.type){
-        case TEST:
+        case TestActionTypes.TEST:
             return action.payload;
         default:
             return state;

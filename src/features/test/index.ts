@@ -1,12 +1,12 @@
-import { ActionType } from "typesafe-actions";
+import { test } from "./actions";
+import { TestActionTypes, TestAction } from "./types";
+import testReducer from "./reducer";
 
-export const TEST = "TEST";
+export {
+    test,
+    TestActionTypes,
+    TestAction,
+    testReducer,
+};
 
-export type TestAction = ActionType<typeof test>;
-
-const test = (payload: string) => {
-    return{
-        type: TEST,
-        payload
-    };
-}
+export default testReducer;

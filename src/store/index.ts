@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import test from "../features/test/test";
+import test from "../features/test";
 
 const reducers = combineReducers({
-    test
+    test,
 });
 
 export default reducers;
