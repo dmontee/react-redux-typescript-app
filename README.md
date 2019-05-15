@@ -4,7 +4,7 @@ Slightly opinionated react/typescript app that has hot module replacement. The a
 
 ---
 
-##Getting Started
+## Getting Started
 
 1.) Clone or download the repo ex: `git clone https://github.com/dmontee/react-redux-typescript-app.git .`
 
