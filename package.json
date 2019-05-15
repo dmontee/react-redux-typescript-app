@@ -4,7 +4,7 @@
     "description": "react-typescript-app",
     "main": "index.js",
     "author": "Dalton Montee",
-    "license": "ISC",
+    "license": "MIT",
     "scripts": {
         "build:dev": "rimraf dist && webpack --config webpack.dev.js --colors",
         "lint": "tslint 'src/**/*.{ts,tsx}'",
