@@ -1,6 +1,8 @@
 import { TestAction, TestActionTypes } from "./types";
 
-const test = (state = "", action: TestAction) => {
+type TestType = string;
+
+const test = (state: TestType = "", action: TestAction): TestType => {
     switch (action.type) {
         case TestActionTypes.TEST:
             return action.payload;
@@ -10,3 +12,5 @@ const test = (state = "", action: TestAction) => {
 };
 
 export default test;
+
+export { TestType };

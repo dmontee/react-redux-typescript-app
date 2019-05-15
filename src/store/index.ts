@@ -1,8 +1,14 @@
 import { combineReducers } from "redux";
-import test from "../features/test";
+import test, { TestType } from "../features/test";
 
-const reducers = combineReducers({
+interface AppState {
+    test: TestType;
+}
+
+const rootReducer = combineReducers<AppState>({
     test,
 });
 
-export default reducers;
+export default rootReducer;
+
+export { AppState };

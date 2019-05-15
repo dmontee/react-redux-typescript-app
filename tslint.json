@@ -5,6 +5,7 @@
         "eofline": true,
         "indent": [true, "spaces", 4],
         "quotemark": [true, "double", "avoid-escape"],
-        "ordered-imports": false
+        "ordered-imports": false,
+        "interface-name": [false, "always-prefix"]
     }
 }

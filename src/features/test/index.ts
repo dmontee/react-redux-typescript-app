@@ -1,7 +1,7 @@
 import { test } from "./actions";
 import { TestActionTypes, TestAction } from "./types";
-import testReducer from "./reducer";
+import testReducer, { TestType } from "./reducer";
 
-export { test, TestActionTypes, TestAction, testReducer };
+export { test, TestActionTypes, TestAction, testReducer, TestType };
 
 export default testReducer;
