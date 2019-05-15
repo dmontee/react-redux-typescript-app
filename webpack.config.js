@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const path = require("path");
 const webpack = require("webpack");
@@ -8,14 +8,12 @@ const postcssOptions = require("./postcss.config");
 module.exports = {
     entry: {
         bundle: "./src/index.tsx",
-        vendors: [
-            "@babel/polyfill",
-        ]
+        vendors: ["@babel/polyfill"],
     },
     output: {
         path: path.join(__dirname, "dist"),
         publicPath: "/",
-        filename: "[name].[hash].js"
+        filename: "[name].[hash].js",
     },
     optimization: {
         splitChunks: {
@@ -23,24 +21,26 @@ module.exports = {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
                     name: "vendors",
-                    chunks: "all"
-                }
-            }
-        }
+                    chunks: "all",
+                },
+            },
+        },
     },
     module: {
         rules: [
             {
                 test: /\.html$/,
-                use: [{
-                    loader: "html-loader",
-                    options: {}
-                }]
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: {},
+                    },
+                ],
             },
             {
                 test: /.(j|t)sx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
             },
             {
                 test: /\.css$/,
@@ -49,19 +49,19 @@ module.exports = {
                     "css-loader",
                     {
                         loader: "postcss-loader",
-                        options: postcssOptions
-                    }
-                ]
-            }
-        ]
+                        options: postcssOptions,
+                    },
+                ],
+            },
+        ],
     },
     resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"]
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
-            template: "./index.html"
-        })
-    ]
+            template: "./index.html",
+        }),
+    ],
 };

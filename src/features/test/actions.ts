@@ -4,6 +4,4 @@ import { TestActionTypes } from "./types";
 
 const test = (payload: string) => action(TestActionTypes.TEST, payload);
 
-export {
-    test,
-};
+export { test };

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { hot } from "react-hot-loader";
+import { hot } from "react-hot-loader/root"; // tslint:disable-line
 
-import Home from "./pages/home";
+import Home from "./pages/Home";
 
 const App = () => (
     <BrowserRouter>

@@ -1,17 +1,10 @@
 {
-    "extends": ["tslint-react"],
+    "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
     "exclude": ["node_modules"],
     "rules": {
         "eofline": true,
-        "indent": [
-            true,
-            "spaces",
-            4
-        ],
-        "quotemark": [
-            true,
-            "double",
-            "avoid-escape"
-        ]
+        "indent": [true, "spaces", 4],
+        "quotemark": [true, "double", "avoid-escape"],
+        "ordered-imports": false
     }
 }

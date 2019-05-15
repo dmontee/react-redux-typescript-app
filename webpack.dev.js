@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 const defaultConfig = require("./webpack.config");
 const merge = require("webpack-merge");
 
@@ -7,8 +7,8 @@ const devConfig = {
     devtool: "inline-source-map",
     devServer: {
         contentBase: "./dist",
-        hot: true
-    }
-}
+        hot: true,
+    },
+};
 
 module.exports = merge(defaultConfig, devConfig);
