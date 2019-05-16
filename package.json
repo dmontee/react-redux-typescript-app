@@ -9,7 +9,9 @@
         "build:dev": "rimraf dist && webpack --config webpack.dev.js --colors",
         "lint": "tslint 'src/**/*.{ts,tsx}'",
         "start": "npm run start:dev",
-        "start:dev": "cross-env NODE_ENV=development webpack-dev-server --debug --hot --config webpack.dev.js"
+        "start:dev": "cross-env NODE_ENV=development webpack-dev-server --debug --hot --config webpack.dev.js",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "dependencies": {
         "normalize.css": "^8.0.1",
@@ -62,6 +64,10 @@
         "webpack": "^4.28.3",
         "webpack-cli": "^3.1.2",
         "webpack-dev-server": "^3.1.14",
-        "webpack-merge": "^4.1.2"
+        "webpack-merge": "^4.1.2",
+        "@storybook/react": "^5.0.11",
+        "@storybook/addon-actions": "^5.0.11",
+        "@storybook/addon-links": "^5.0.11",
+        "@storybook/addons": "^5.0.11"
     }
 }
